@@ -23,9 +23,7 @@ axios
   .then(response => {
     var info = response.data.articles;
     for (topic in info) {
-      const data = info[topic].forEach(obj =>
-        cardsContainer.appendChild(card(obj))
-      );
+      info[topic].forEach(obj => cardsContainer.appendChild(card(obj)));
     }
   })
   .catch(e => {

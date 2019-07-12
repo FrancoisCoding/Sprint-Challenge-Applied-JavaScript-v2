@@ -11,18 +11,17 @@ const topics = document.querySelector(".topics");
 axios
   .get("https://lambda-times-backend.herokuapp.com/topics")
   .then(response => {
-    const data = response.data.topics;
-    const holderArray = [];
-    holderArray.push(data);
-    holderArray.forEach(item => {
-      tabs(item);
-    });
+    var info = response.data.topics;
+    for (i = 0; i < info.length; i++) {
+      tabs(info[i]);
+    }
   })
   .catch(error => console.log("error", error));
 
 function tabs(item) {
   var topic = document.createElement("div");
   topic.textContent = item;
+  topic.classList.add("tab");
 
   topics.appendChild(topic);
 }
