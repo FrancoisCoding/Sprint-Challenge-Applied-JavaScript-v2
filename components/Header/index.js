@@ -32,7 +32,6 @@ function header() {
   headerDiv.appendChild(spanTemp);
 
   const headerContainer = document.querySelector(".header-container");
-  console.log(headerContainer);
   headerContainer.appendChild(headerDiv);
 }
 header();
